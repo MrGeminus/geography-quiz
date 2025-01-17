@@ -75,14 +75,14 @@ function checkAnswer(e) {
         awardPoints()
         removeFromPool(e.target)
         setTargetRegion(e.target.attributes.title.textContent)
-        setTurn(game.turn)
+        game.turn = setTurn(game.turn)
         game.runningTimer = setInterval(updateTimer, 1000)
     }
     else {
         resetTimer()
         e.target.classList.add("wrong")
         setTimeout(() => e.target.classList.remove("wrong"), 500)
-        setTurn(game.turn)
+        game.turn = setTurn(game.turn)
         game.runningTimer = setInterval(updateTimer, 1000)
     }
 }
